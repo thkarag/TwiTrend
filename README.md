@@ -1,9 +1,14 @@
-# Εγκατάσταση
+# Install and Run
 
 ### Install dependencies
 
-Εγκταστήστε της βιβλιοθήκες `npm install` individually
+Install the dependencies first by going into individual folders, i.e., frontend and backend using `npm install` individually
+
+### Build the application
+
+use `docker-compose up --build` inside the project root folder to build the containers.
 
 ### Run the application
 
-use `npm run dev` inside the project root folder to start the both the applications, frontend React will run on `PORT=3000` and backend express will run on `PORT=4000`
+Use `docker-compose up` inside the project root folder.
+frontend React will run on `PORT=3000` and backend express will run on `PORT=4000`
