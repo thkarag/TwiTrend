@@ -1,8 +1,8 @@
-# Getting Started with this project
+# Εγκατάσταση
 
 ### Install dependencies
 
-Install the dependencies first by going into individual folders, i.e., frontend and backend using `npm install` individually
+Εγκταστήστε της βιβλιοθήκες `npm install` individually
 
 ### Run the application
 
