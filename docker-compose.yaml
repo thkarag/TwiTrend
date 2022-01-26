@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ./frontend
+    expose:
+      - "3000"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/fr
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  backend: 
+    depends_on:
+      - db
+    build: ./backend
+    expose:
+      - "4000"
+    ports: 
+      - "4000:4000"
+    volumes:
+      - ./backend:/bk
+    environment: 
+      DB_URL: mongodb://db/app
+
+  db:
+    image: mongo:4.0-xenial
+    ports:
+      - 27017:27017
+    volumes:
+      - app:/data/db
+
+volumes:
+  app:
