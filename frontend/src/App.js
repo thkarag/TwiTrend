@@ -75,10 +75,12 @@ function App() {
       <div className='menu'>
         <select name='trending-place' onChange={e => setWoeid(e.target.value)}>
           <option value='1'>Worldwide</option>
-          <option value='23424848'>India</option>
           <option value='2459115'>New York,US</option>
-          <option value='2442047'>Los Angeles,US</option>
-          <option value='2295411'>Mumbai</option>
+          <option value='23424975'>United Kingdom</option>
+          <option value='23424829'>Germany</option>
+          <option value='23424833'>Greece</option>
+          <option value='23424833'>Athens,GR</option>
+          <option value='23424833'>Thessaloniki,GR</option>
           <option value='1105779'>Sydney,AU</option>
         </select>
         <div className='location' onClick={handleLocation}>
