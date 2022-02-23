@@ -10,6 +10,7 @@ function App() {
 
   useEffect(() => getTrends(), [woeid])
 
+  // Get parameter woeid from twitter api
   function getTrends() {
     axios
       .get('/api/trends', {
@@ -18,12 +19,13 @@ function App() {
         },
       })
       .then(response => {
-        // console.log(response.data)
+        console.log(response.data)
         setTrends(response.data[0].trends)
       })
       .catch(error => console.log(error.message))
   }
 
+  // Find geolocation of user
   function handleLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -50,6 +52,7 @@ function App() {
     }
   }
 
+  // List twitter trends
   function listTrends() {
     return (
       <ul>
