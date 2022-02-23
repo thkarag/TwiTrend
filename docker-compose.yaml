@@ -9,6 +9,7 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend:/fr
+    # Replace file system's local host with docker local host
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
@@ -20,17 +21,26 @@ services:
       - "4000"
     ports: 
       - "4000:4000"
+    links:
+      - db
     volumes:
       - ./backend:/bk
-    environment: 
-      DB_URL: mongodb://db/app
+    networks:
+      - webappnetwork
+    restart: always
 
   db:
     image: mongo:4.0-xenial
+    container_name: mongodb
     ports:
       - 27017:27017
-    volumes:
-      - app:/data/db
+    command: --quiet
+    networks:
+      - webappnetwork
+
+networks:
+    webappnetwork:
+        driver: bridge
 
 volumes:
-  app:
+  db:
