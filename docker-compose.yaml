@@ -11,7 +11,7 @@ services:
       - ./frontend:/fr
     # Replace file system's local host with docker local host
     extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - "docker.for.win.localhost:host-gateway"
 
   backend: 
     depends_on:
